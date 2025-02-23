@@ -1,0 +1,2 @@
+
+2024-2025 Roland Pihlakas <roland@simplify.ee> https://github.com/levitation-opensource/zoo_to_gym_multiagent_adapter

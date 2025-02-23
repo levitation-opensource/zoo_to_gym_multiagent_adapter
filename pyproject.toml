@@ -1,0 +1,41 @@
+[project]
+name = "zoo_to_gym_multiagent_adapter"
+version = "0.9.0"
+description = "Zoo to Gym Multi-Agent Adapter"
+readme = "README.md"
+authors = [
+  {name = "Roland Pihlakas", email = "roland@simplify.ee"}
+]
+dependencies = [
+  "gymnasium",
+  "PettingZoo",
+  "psutil"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["zoo_to_gym_multiagent_adapter"]
+
+[tool.black]
+line-length = 88
+force-exclude = '''
+/(
+gymnasium
+| pettingzoo
+| \.vshistory
+)/
+'''
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = "E121,E123,E126,E226,E24,E704,W503,W504,E203,E501,F401,W291,E266,F403,F405,F841,E265,F811"
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+ignore_missing_imports = true
