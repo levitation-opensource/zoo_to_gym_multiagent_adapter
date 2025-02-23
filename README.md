@@ -25,9 +25,7 @@ Currently you can install the wrapper from the source:
 ### From Source:
 
 ```
-git clone https://github.com/levitation-opensource/zoo_to_gym_multiagent_adapter.git
-cd zoo_to_gym_multiagent_adapter
-pip install .
+pip install git+https://github.com/levitation-opensource/zoo_to_gym_multiagent_adapter@main#egg=zoo_to_gym_multiagent_adapter
 ```
 
 
