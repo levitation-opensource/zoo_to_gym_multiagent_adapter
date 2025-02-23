@@ -8,6 +8,8 @@ import os
 import multiprocessing
 import psutil
 
+import torch
+
 import gymnasium as gym
 from pettingzoo import AECEnv, ParallelEnv
 

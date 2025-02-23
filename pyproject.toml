@@ -9,7 +9,8 @@ authors = [
 dependencies = [
   "gymnasium",
   "PettingZoo",
-  "psutil"
+  "psutil",
+  "torch"
 ]
 
 [build-system]
