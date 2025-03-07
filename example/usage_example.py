@@ -22,6 +22,21 @@ def is_json_serializable(item: Any) -> bool:
     return False
 
 
+def select_gpu(gpu_index=None):
+    if gpu_index is not None:
+        gpu_count = torch.cuda.device_count()
+        if gpu_count == 0:
+            print(
+                "No CUDA GPU available, ignoring assigned GPU index, will be using CPU as a CUDA device"
+            )
+            return
+
+        gpu_index = int(gpu_index)
+        torch.cuda.set_device(gpu_index)
+        device_name = torch.cuda.get_device_name(gpu_index)
+        print(f"Using CUDA GPU {gpu_index} : {device_name}")
+
+
 def sb3_agent_train_thread_entry_point(
     pipe,
     gpu_index,
