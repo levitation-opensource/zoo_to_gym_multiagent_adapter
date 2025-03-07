@@ -4,7 +4,7 @@
 
 ## Overview
 
-This wrapper allows you to convert a **PettingZoo** environment to a **Gym** environment while supporting multiple agents. Gym's default setup doesn't easily support multi-agent environments, but this wrapper resolves that by running each agent in its own process and sharing the environment across those processes.
+This wrapper allows you to convert a **PettingZoo** environment to a **Gym** environment while supporting multiple agents (MARL). Gym's default setup doesn't easily support multi-agent environments, but this wrapper resolves that by running each agent in its own process and sharing the environment across those processes.
 
 
 ## Features
@@ -31,10 +31,13 @@ pip install git+https://github.com/levitation-opensource/zoo_to_gym_multiagent_a
 
 ## Usage
 
-TODO
-
 For an example, see 
-<br> https://github.com/aintelope/biological-compatibility-benchmarks/tree/main/aintelope/agents/dqn_agent.py
+
+[example/usage_example.py](example/usage_example.py)
+
+Alternatively, for a more comprehensive usage example, see aintelope repo:
+
+https://github.com/aintelope/biological-compatibility-benchmarks/tree/main/aintelope/agents/dqn_agent.py
 <br>and
 <br> https://github.com/aintelope/biological-compatibility-benchmarks/tree/main/aintelope/agents/sb3_base_agent.py
 
@@ -44,6 +47,11 @@ For an example, see
 * The wrapper handles the conversion of the PettingZoo environment API into a Gym-compatible API.
 * When there are multiple agents, each agent runs in its own process, and the wrapper ensures synchronization and data sharing between them, allowing you to train multi-agent RL scenarios using Gym.
 * This solves the issue of Gym's default lack of native support for multiple agents in a single environment.
+
+
+## Current project state
+
+Ready to use. Is actively developed further.
 
 
 ## Contributions
