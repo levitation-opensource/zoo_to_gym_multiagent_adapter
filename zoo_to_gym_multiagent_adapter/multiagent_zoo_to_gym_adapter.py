@@ -187,6 +187,13 @@ class MultiAgentZooToGymAdapterZooSide(gym.Env):
         """
 
         gpu_count = torch.cuda.device_count()
+                  
+        if gpu_count > 0:
+            try:
+                # per documentation, this method should be called only once
+                multiprocessing.set_start_method("spawn", force=True)  # https://github.com/pytorch/pytorch/issues/40403
+            except:
+                pass
 
         # start Gym threads via agent_thread_entry_point, send (pipe, gpu_index, num_total_steps, model_constructor, agent_id, cfg, observation_space, action_space) to each
         self.agent_processes = []
@@ -228,9 +235,6 @@ class MultiAgentZooToGymAdapterZooSide(gym.Env):
             #    stdout=asyncio.subprocess.PIPE,
             #    stderr=asyncio.subprocess.STDOUT,
             # )
-            
-            if gpu_count > 0:
-                multiprocessing.set_start_method("spawn")  # https://github.com/pytorch/pytorch/issues/40403
 
             agent_process = multiprocessing.Process(
                 target=agent_thread_entry_point, args=agent_thread_args
