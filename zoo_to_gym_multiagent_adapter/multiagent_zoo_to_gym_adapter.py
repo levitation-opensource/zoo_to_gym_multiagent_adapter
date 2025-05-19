@@ -228,6 +228,10 @@ class MultiAgentZooToGymAdapterZooSide(gym.Env):
             #    stdout=asyncio.subprocess.PIPE,
             #    stderr=asyncio.subprocess.STDOUT,
             # )
+            
+            if gpu_count > 0:
+                multiprocessing.set_start_method("spawn")  # https://github.com/pytorch/pytorch/issues/40403
+
             agent_process = multiprocessing.Process(
                 target=agent_thread_entry_point, args=agent_thread_args
             )
