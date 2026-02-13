@@ -1,16 +1,16 @@
 [project]
 name = "zoo_to_gym_multiagent_adapter"
-version = "0.9.3"
+version = "0.9.3.1"
 description = "Zoo to Gym Multi-Agent Adapter"
 readme = "README.md"
 authors = [
   {name = "Roland Pihlakas", email = "roland@simplify.ee"}
 ]
 dependencies = [
-  "gymnasium",
-  "PettingZoo",
-  "psutil",
-  "torch"
+  "gymnasium==0.29.1",
+  "PettingZoo==1.24.1",
+  "psutil==5.9.4",
+  "torch==2.1.0"
 ]
 
 [build-system]

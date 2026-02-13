@@ -1,4 +1,4 @@
-gymnasium
-PettingZoo
-psutil
-torch
+gymnasium==0.29.1
+PettingZoo==1.24.1
+psutil==5.9.4
+torch==2.1.0
