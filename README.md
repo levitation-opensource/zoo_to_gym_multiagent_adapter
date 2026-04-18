@@ -35,11 +35,11 @@ For an example, see
 
 [example/usage_example.py](example/usage_example.py)
 
-Alternatively, for a more comprehensive usage example, see "Biologically and economically aligned multi-objective multi-agent AI safety benchmarks" repo:
+Alternatively, for a more comprehensive usage example, see "Biologically and economically aligned multi-objective multi-agent gridworld-based AI safety benchmarks" repo:
 
-https://github.com/biological-alignment-benchmarks/biological-alignment-gridworlds-benchmarks/tree/main/aintelope/agents/dqn_agent.py
+https://github.com/biological-alignment-benchmarks/biological-alignment-gridagents-benchmarks/tree/main/gridagents/agents/dqn_agent.py
 <br>and
-<br> https://github.com/biological-alignment-benchmarks/biological-alignment-gridworlds-benchmarks/tree/main/aintelope/agents/sb3_base_agent.py
+<br> https://github.com/biological-alignment-benchmarks/biological-alignment-gridagents-benchmarks/tree/main/gridagents/agents/sb3_base_agent.py
 
 
 ## How It Works
@@ -66,3 +66,8 @@ This project is licensed under the Mozilla Public License 2.0 - see the [LICENSE
 **Attribution Requirement**: If you use this library, please cite the source as follows:
 
 Roland Pihlakas. From homeostasis to resource sharing: Biologically and economically aligned multi-objective multi-agent gridworld-based AI safety benchmarks. Arxiv, a working paper, September 2024 (https://arxiv.org/abs/2410.00081).
+
+Original upstream repository: [https://github.com/biological-alignment-benchmarks/zoo_to_gym_multiagent_adapter](https://github.com/biological-alignment-benchmarks/zoo_to_gym_multiagent_adapter)
+
+
+
