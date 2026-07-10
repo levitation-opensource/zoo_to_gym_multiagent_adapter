@@ -14,6 +14,11 @@ from zoo_to_gym_multiagent_adapter.singleagent_zoo_to_gym_adapter import (
     SingleAgentZooToGymAdapter,
 )
 
+from zoo_to_gym_multiagent_adapter.multiagent_zoo_to_gym_adapter import (
+    MultiAgentZooToGymAdapterGymSide,
+    MultiAgentZooToGymAdapterZooSide,
+)
+
 import torch
 from stable_baselines3 import DQN
 

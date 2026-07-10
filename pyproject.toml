@@ -1,6 +1,6 @@
 [project]
 name = "zoo_to_gym_multiagent_adapter"
-version = "0.9.3.3"
+version = "0.9.3.4"
 description = "Zoo to Gym Multi-Agent Adapter"
 readme = "README.md"
 authors = [
