@@ -2,7 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 #
-# Repository: https://github.com/biological-alignment-benchmarks/zoo_to_gym_multiagent_adapter
+# Original upstream repository:
+# https://github.com/biological-alignment-benchmarks/zoo_to_gym_multiagent_adapter
 
 import os
 import multiprocessing
@@ -68,7 +69,7 @@ class MultiAgentZooToGymAdapterGymSide(gym.Env):
         self.model = None
 
     @property
-    def num_envs(self):     # called by VecCheckNan env
+    def num_envs(self):  # called by VecCheckNan env
         return 1
 
     # Called by VecCheckNan env. Lets simulate vectorised env here.
@@ -95,7 +96,6 @@ class MultiAgentZooToGymAdapterGymSide(gym.Env):
             (_, observation, info) = data
 
             if hasattr(self.model, "policy"):
-
                 if hasattr(self.model.policy, "my_reset"):
                     self.model.policy.my_reset(observation, info)
 
@@ -108,7 +108,7 @@ class MultiAgentZooToGymAdapterGymSide(gym.Env):
                 if hasattr(self.model.policy, "set_infos"):
                     self.model.policy.set_infos([info])
 
-            #/ if hasattr(self.model, "policy"):
+            # / if hasattr(self.model, "policy"):
 
             return observation, info
         elif data[0] == "force_termination":
@@ -198,15 +198,13 @@ class MultiAgentZooToGymAdapterZooSide(gym.Env):
     other agents have taken their step as well.
     """
 
-    def __init__(self, zoo_env, cfg, env_classname = None):
+    def __init__(self, zoo_env, cfg, env_classname=None):
         super().__init__()
 
         self.env = zoo_env
         if env_classname is None:
             env_classname = (
-                zoo_env.__class__.__module__
-                + "."
-                + zoo_env.__class__.__qualname__
+                zoo_env.__class__.__module__ + "." + zoo_env.__class__.__qualname__
             )
         self.env_classname = env_classname
         self.cfg = cfg
@@ -233,11 +231,13 @@ class MultiAgentZooToGymAdapterZooSide(gym.Env):
         """
 
         gpu_count = torch.cuda.device_count()
-                  
+
         if gpu_count > 0:
             try:
                 # per documentation, this method should be called only once
-                multiprocessing.set_start_method("spawn", force=True)  # https://github.com/pytorch/pytorch/issues/40403
+                multiprocessing.set_start_method(
+                    "spawn", force=True
+                )  # https://github.com/pytorch/pytorch/issues/40403
             except:
                 pass
 
@@ -677,6 +677,6 @@ class MultiAgentZooToGymAdapterZooSide(gym.Env):
 
         return models, exceptions
 
-    # def sequential_env_main_loop(self, terminate_all_agents_when_one_excepts=True, seed, options, *args, **kwargs):
+    # def parallel_env_main_loop(self, terminate_all_agents_when_one_excepts=True, seed, options, *args, **kwargs):
 
     # TODO

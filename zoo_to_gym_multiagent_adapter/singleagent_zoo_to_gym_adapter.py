@@ -2,7 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 #
-# Repository: https://github.com/biological-alignment-benchmarks/zoo_to_gym_multiagent_adapter
+# Original upstream repository:
+# https://github.com/biological-alignment-benchmarks/zoo_to_gym_multiagent_adapter
 
 import gymnasium as gym
 from pettingzoo import AECEnv, ParallelEnv
@@ -16,9 +17,9 @@ class SingleAgentZooToGymAdapter(gym.Env):
 
     Similar to using:
     env = ss.pettingzoo_env_to_vec_env_v1(env)
-    env = ss.concat_vec_envs_v1(env, num_vec_envs=1, num_cpus=1, 
+    env = ss.concat_vec_envs_v1(env, num_vec_envs=1, num_cpus=1,
                                 base_class="stable_baselines3")
-    ... but simpler internally and also automatically supports AECEnv, which 
+    ... but simpler internally and also automatically supports AECEnv, which
     would need yet one more additional wrapper when using SuperSuit.
     """
 
@@ -36,7 +37,7 @@ class SingleAgentZooToGymAdapter(gym.Env):
         self.render_mode = None  # Some libraries require this field to be present. The actual value seems to be unimportant.
 
     @property
-    def num_envs(self):     # called by VecCheckNan env
+    def num_envs(self):  # called by VecCheckNan env
         return 1
 
     # Called by VecCheckNan env. Lets simulate vectorised env here.
